@@ -34,4 +34,10 @@ password_field = browser.find_element_by_css_selector("#form-error")
 password_field.send_keys(password)
 password_field.send_keys(Keys.RETURN)
 
+# Click 'Ugeplan/Lektie' tab
+browser.implicitly_wait(2)
+lektie_tab = browser.find_element_by_css_selector(
+    "body > div.layout-portal__content > div > div.layout-portal__top > div.layout-box > ul > li.mb-main-tab-menu__item.mb-main-tab-menu__item--zindex-2 > div > a > span")
+lektie_tab.click()
+
 # browser.close()
