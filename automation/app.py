@@ -17,5 +17,9 @@ browser = webdriver.Chrome("./chromedriver", options=options)
 browser.get("https://app.meebook.com/foraeldre/1")
 browser.maximize_window()
 
+# Click login button
+login_button = browser.find_element_by_css_selector(
+    "body > div.portal-frontpage > div > div.portal-frontpage__main-content > div > div:nth-child(2) > div > div:nth-child(1) > div > a > span")
+login_button.click()
 
 # browser.close()
