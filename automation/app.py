@@ -44,5 +44,15 @@ lektie_tab.click()
 week_overview = browser.find_element_by_id("weekPlanSummaryList")
 kid_li = week_overview.find_elements_by_tag_name("li")
 
+# Loop through each kid
+for li in kid_li:
+
+    # list for homework assignments
+    homework = []
+
+    # Get kids name
+    child_name = li.find_element_by_class_name(
+        "wkplancal-columns__plan-title").text.split()[0]
+
 
 # browser.close()
