@@ -40,9 +40,9 @@ lektie_tab = browser.find_element_by_css_selector(
     "body > div.layout-portal__content > div > div.layout-portal__top > div.layout-box > ul > li.mb-main-tab-menu__item.mb-main-tab-menu__item--zindex-2 > div > a > span")
 lektie_tab.click()
 
-# Get 'li' for each kid
+# Get week overview 'li' for each kid
 week_overview = browser.find_element_by_id("weekPlanSummaryList")
 kid_li = week_overview.find_elements_by_tag_name("li")
-print(kid_li)
+
 
 # browser.close()
