@@ -22,5 +22,11 @@ const puppeteer = require("puppeteer");
   await page.type(usernameSelector, process.env.USERNAME, { delay: 250 });
   await page.click(submitSelector);
 
+  // Submit password
+  await page.type("#form-error", process.env.PASSWORD, { delay: 250 });
+  await page.click(
+    "body > main > div > div > form > nav > div > div.col-7.col-sm-8.col-md-7.col-lg-7.order-2 > button"
+  );
+
   // await browser.close();
 })();
