@@ -5,6 +5,10 @@ const puppeteer = require("puppeteer");
   // Go to login page
   const browser = await puppeteer.launch({
     headless: false,
+    defaultViewport: {
+      width: 1387,
+      height: 1000,
+    },
   });
   const page = await browser.newPage();
   await page.goto("https://app.meebook.com/foraeldre/1");
@@ -27,6 +31,12 @@ const puppeteer = require("puppeteer");
   await page.click(
     "body > main > div > div > form > nav > div > div.col-7.col-sm-8.col-md-7.col-lg-7.order-2 > button"
   );
+
+  // Click homework header
+  const element = await page.waitForSelector(
+    "body > div.layout-portal__content > div > div.layout-portal__top > div.layout-box > ul > li.mb-main-tab-menu__item.mb-main-tab-menu__item--zindex-2 > div > a > span"
+  );
+  element.click();
 
   // await browser.close();
 })();
