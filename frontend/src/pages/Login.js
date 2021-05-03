@@ -1,11 +1,19 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Button, Container, TextField } from "@material-ui/core";
 
 import AuthContext from "../context/auth/AuthContext";
 
-const Login = () => {
+const Login = (props) => {
   const [parent, setParent] = useState({ email: "", password: "" });
-  const { login } = useContext(AuthContext);
+  const { token, login } = useContext(AuthContext);
+
+  const { email, password } = parent;
+
+  useEffect(() => {
+    if (token) {
+      props.history.push("/");
+    }
+  }, [token, props.history]);
 
   const onChange = (e) => {
     setParent({ ...parent, [e.target.name]: e.target.value });
@@ -13,10 +21,12 @@ const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    login(parent.email, parent.password);
+    login(email, password);
   };
 
-  const { email, password } = parent;
+  if (token) {
+    return null;
+  }
 
   return (
     <Container style={{ maxWidth: "500px" }}>
