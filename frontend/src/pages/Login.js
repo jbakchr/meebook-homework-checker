@@ -4,19 +4,19 @@ import { Button, Container, TextField } from "@material-ui/core";
 import AuthContext from "../context/auth/AuthContext";
 
 const Login = () => {
-  const [user, setUser] = useState({ email: "", password: "" });
+  const [parent, setParent] = useState({ email: "", password: "" });
   const { login } = useContext(AuthContext);
 
   const onChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+    setParent({ ...parent, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    login(user.email, user.password);
+    login(parent.email, parent.password);
   };
 
-  const { email, password } = user;
+  const { email, password } = parent;
 
   return (
     <Container style={{ maxWidth: "500px" }}>
@@ -46,7 +46,9 @@ const Login = () => {
           variant="contained"
           color="primary"
           type="submit"
-          disabled={user.email === "" || user.password === "" ? true : false}
+          disabled={
+            parent.email === "" || parent.password === "" ? true : false
+          }
         >
           Log in
         </Button>
