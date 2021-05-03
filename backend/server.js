@@ -6,6 +6,7 @@ const authRoutes = require("./routes/auth");
 
 // DB
 const db = require("./db/db");
+const dbSeeding = require("./db/dbSeeding");
 
 const PORT = process.env.PORT || 5000;
 
@@ -19,6 +20,9 @@ app.use("/api/auth", authRoutes);
 
 db.sync({ force: true })
   .then(() => {
-    app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+    app.listen(PORT, () => {
+      console.log(`http://localhost:${PORT}`);
+      dbSeeding();
+    });
   })
   .catch((err) => console.log(err));
