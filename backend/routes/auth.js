@@ -1,6 +1,8 @@
 const express = require("express");
 const { check, validationResult } = require("express-validator");
 
+const Parent = require("../models/Parent");
+
 const router = express.Router();
 
 router.post(

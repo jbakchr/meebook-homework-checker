@@ -17,7 +17,7 @@ app.use(express.json());
 // Middleware routes
 app.use("/api/auth", authRoutes);
 
-db.sync()
+db.sync({ force: true })
   .then(() => {
     app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
   })
