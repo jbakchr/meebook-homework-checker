@@ -1,9 +1,12 @@
+import { LOGIN_SUCCESS } from "../types";
+
 const AuthReducer = (state, action) => {
   switch (action.type) {
-    case "LOGIN":
+    case LOGIN_SUCCESS:
+      localStorage.setItem("token", action.payload);
       return {
         ...state,
-        token: action.paylod,
+        token: action.payload,
       };
     default:
       return state;
