@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "child_name": "Edgar Bak Phillipson 1B",
+    "assignments": [
+      {
+        "id": 3,
+        "date": "Tirsdag 4. Maj",
+        "subject": "Dansk",
+        "work": "Diktat"
+      },
+      {
+        "id": 4,
+        "date": "Torsdag 6. Maj",
+        "subject": "Dansk",
+        "work": "Johan H: Speakers Corner"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "child_name": "Milton Bak Phillipson 4B",
+    "assignments": [
+      {
+        "id": 5,
+        "date": "Mandag 3. Maj",
+        "subject": "Matematik",
+        "work": "Lektier: Breddeopgaver side 114 opg. 6 - du skal fortsætte talrækken med mindst 3 tal. side 115 opg 14 og 15"
+      },
+      {
+        "id": 6,
+        "date": "Fredag 7. Maj",
+        "subject": "Matematik",
+        "work": "Lektier: Breddeopgaver s. 115 opg. 16, 17 og 18"
+      }
+    ]
+  }
+]
