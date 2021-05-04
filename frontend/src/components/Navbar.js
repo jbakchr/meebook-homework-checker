@@ -1,18 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import {
-  AppBar,
-  Toolbar,
-  Container,
-  Typography,
-  Button,
-} from "@material-ui/core";
+import { AppBar, Toolbar, Container, Typography } from "@material-ui/core";
 
-import AuthContext from "../context/auth/AuthContext";
+import NavbarAuthButton from "./NavbarAuthButton";
 
 const Navbar = () => {
-  const { token } = useContext(AuthContext);
-
   return (
     <>
       <AppBar>
@@ -23,18 +15,7 @@ const Navbar = () => {
                 Meebook Homework Checker
               </Link>
             </Typography>
-            {token ? (
-              <Button color="inherit">Log out</Button>
-            ) : (
-              <Button color="inherit">
-                <Link
-                  style={{ textDecoration: "none", color: "white" }}
-                  to="/login"
-                >
-                  Login
-                </Link>
-              </Button>
-            )}
+            <NavbarAuthButton />
           </Container>
         </Toolbar>
       </AppBar>
