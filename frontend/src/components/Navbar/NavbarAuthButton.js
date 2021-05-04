@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-import AuthContext from "../context/auth/AuthContext";
+import AuthContext from "../../context/auth/AuthContext";
 
 const NavbarAuthButton = () => {
   const { token } = useContext(AuthContext);
