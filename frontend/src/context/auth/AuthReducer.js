@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS } from "../types";
+import { LOGIN_SUCCESS, LOGOUT } from "../types";
 
 const AuthReducer = (state, action) => {
   switch (action.type) {
@@ -7,6 +7,12 @@ const AuthReducer = (state, action) => {
       return {
         ...state,
         token: action.payload,
+      };
+    case LOGOUT:
+      localStorage.removeItem("token");
+      return {
+        ...state,
+        token: null,
       };
     default:
       return state;

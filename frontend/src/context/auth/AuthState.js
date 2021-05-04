@@ -3,7 +3,7 @@ import axios from "axios";
 
 import AuthContext from "./AuthContext";
 import AuthReducer from "./AuthReducer";
-import { LOGIN_SUCCESS } from "../types";
+import { LOGIN_SUCCESS, LOGOUT } from "../types";
 
 const AuthState = (props) => {
   const initialState = {
@@ -25,11 +25,16 @@ const AuthState = (props) => {
     }
   };
 
+  const logout = () => {
+    dispatch({ type: LOGOUT });
+  };
+
   return (
     <AuthContext.Provider
       value={{
         token: state.token,
         login,
+        logout,
       }}
     >
       {props.children}
