@@ -1,22 +1,15 @@
 import React from "react";
-import { AppBar, Toolbar, Container } from "@material-ui/core";
 
-import NavbarAuthButton from "./NavbarAuthButton";
+import NavbarLayout from "./NavbarLayout";
 import NavbarTitle from "./NavbarTitle";
+import NavbarAuthButton from "./NavbarAuthButton";
 
 const Navbar = () => {
   return (
-    <>
-      <AppBar>
-        <Toolbar>
-          <Container style={{ display: "flex" }}>
-            <NavbarTitle />
-            <NavbarAuthButton />
-          </Container>
-        </Toolbar>
-      </AppBar>
-      <Toolbar />
-    </>
+    <NavbarLayout>
+      <NavbarTitle />
+      <NavbarAuthButton />
+    </NavbarLayout>
   );
 };
 
