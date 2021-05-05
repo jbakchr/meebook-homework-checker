@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import AuthState from "./context/auth/AuthState";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/navbar/Navbar";
 import PrivateRoute from "./routing/PrivateRoute";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
